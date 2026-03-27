@@ -1,29 +1,34 @@
+
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ThrowsKeywordDemo {
-
-    public static void check(int n) throws IOException {
-        if (n < 0) {
+public class ThrowsDemo 
+{
+    static void check(int n) throws IOException 
+    {
+        if (n < 0) 
+        {
             throw new IOException();
-        } else {
+        } 
+        else 
+        {
             System.out.println(n);
         }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) 
+    {
 
-        if (scanner.hasNextInt()) {
-            int n = scanner.nextInt();
-
-            try {
-                check(n);
-            } catch (IOException e) {
-                System.out.println("Caught: IO Exception");
-            }
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        try 
+        {
+            check(n);
         }
-
-        scanner.close();
+        catch (IOException e) 
+        {
+            System.out.println("Caught: IO Exception");
+        }
+        sc.close();
     }
 }
